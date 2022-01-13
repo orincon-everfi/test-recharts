@@ -1,31 +1,35 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
+  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
+  LabelList,
 } from "recharts";
 import data1 from "../data/datasample";
 
-const RechartsLine = () => {
+const StackedBars = () => {
   return (
     <div style={{ width: "95%", height: 400 }}>
-      <h2 class="sectiontext">Line Chart (Discrete)</h2>
+      <h2 class="sectiontext">Stacked Bars</h2>
       <ResponsiveContainer width="90%" aspect={3}>
-        <LineChart
+        <BarChart
           width={500}
           height={300}
           data={data1}
           margin={{
             top: 0,
             right: 20,
-            left: 10,
+            left: 20,
             bottom: 5,
           }}
+          stroke="#333333"
+          LabelList
         >
           <CartesianGrid stroke="#f5f5f5" horizontal="true" vertical="" />
           <XAxis dataKey="name" fontSize={13} stroke="#836a71" />
@@ -45,37 +49,47 @@ const RechartsLine = () => {
           />
           <Legend
             verticalAlign="top"
-            height={50}
+            height={40}
             width={350}
             iconType="square"
+            align="left"
           />
-          <Line
-            type="line"
-            dot=""
+          <Bar
             dataKey="Consumer"
-            stroke="#21c3b8"
-            strokeWidth={2}
-            activeDot={{ r: 6 }}
+            stackId="a"
+            fill="#21c3b8"
+            label={{
+              fill: "#000000",
+              fontSize: 11,
+              stroke: "#333333",
+              fontWeight: "lighter",
+            }}
           />
-          <Line
-            type="line"
-            dot=""
+          <Bar
             dataKey="Corporate"
-            stroke="#fb8340"
-            strokeWidth={2}
-            activeDot={{ r: 6 }}
+            stackId="a"
+            fill="#fb8340"
+            label={{
+              fill: "#000000",
+              fontSize: 11,
+              stroke: "#333333",
+              fontWeight: "lighter",
+            }}
           />
-          <Line
-            type="line"
-            dot=""
+          <Bar
             dataKey="Home_Office"
-            stroke="#ffd256"
-            strokeWidth={2}
-            activeDot={{ r: 6 }}
+            stackId="a"
+            fill="#ffd256"
+            label={{
+              fill: "#000000",
+              fontSize: 11,
+              stroke: "#333333",
+              fontWeight: "lighter",
+            }}
           />
-        </LineChart>
+        </BarChart>
       </ResponsiveContainer>
     </div>
   );
 };
-export default RechartsLine;
+export default StackedBars;
