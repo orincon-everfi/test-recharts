@@ -54,7 +54,7 @@ const StackedBars = () => {
           />
           <Legend
             verticalAlign="top"
-            height={60}
+            height={50}
             width={350}
             iconType="square"
             align="left"
