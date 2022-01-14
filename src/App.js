@@ -1,4 +1,5 @@
 import "./App.css";
+import RechartsArea from "./components/RechartsArea";
 import RechartsLine from "./components/RechartsLine";
 import StackedBars from "./components/StackedBars";
 
@@ -11,6 +12,10 @@ function App() {
       <br></br>
       <br></br>
       <StackedBars />
+      <br></br>
+      <br></br>
+      <br></br>
+      <RechartsArea />
     </div>
   );
 }

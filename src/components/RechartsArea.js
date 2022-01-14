@@ -1,7 +1,7 @@
 import React from "react";
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -11,21 +11,22 @@ import {
 } from "recharts";
 import data1 from "../data/datasample";
 
-const RechartsLine = () => {
+const RechartsArea = () => {
   return (
     <div style={{ width: "95%", height: 400 }}>
-      <h2 class="sectiontext">Line Chart (Discrete)</h2>
+      <h2 class="sectiontext">Area Chart</h2>
       <ResponsiveContainer width="90%" aspect={3}>
-        <LineChart
-          width={500}
+        <AreaChart
+          width={300}
           height={300}
           data={data1}
           margin={{
             top: 0,
             right: 20,
-            left: 10,
+            left: 20,
             bottom: 5,
           }}
+          stroke="#333333"
         >
           <CartesianGrid stroke="#f5f5f5" horizontal="true" vertical="" />
           <XAxis
@@ -47,41 +48,28 @@ const RechartsLine = () => {
               fontSize: 13,
               fontWeight: "lighter",
             }}
-            cursor=""
+            cursor={false}
           />
-          <Legend
+          {/*  <Legend
             verticalAlign="top"
-            height={50}
+            height={60}
             width={350}
             iconType="square"
-          />
-          <Line
-            type="line"
-            dot=""
-            dataKey="Consumer"
-            stroke="#21c3b8"
-            strokeWidth={2}
-            activeDot={{ r: 6 }}
-          />
-          <Line
-            type="line"
-            dot=""
-            dataKey="Corporate"
-            stroke="#fb8340"
-            strokeWidth={2}
-            activeDot={{ r: 6 }}
-          />
-          <Line
-            type="line"
-            dot=""
+            align="left"
+        /> */}
+          <Area type="linear" dataKey="Consumer" stackId="a" fill="#21c3b8" />
+
+          <Area type="linear" dataKey="Corporate" stackId="a" fill="#fb8340" />
+
+          <Area
+            type="linear"
             dataKey="Home_Office"
-            stroke="#ffd256"
-            strokeWidth={2}
-            activeDot={{ r: 6 }}
+            stackId="a"
+            fill="#ffd256"
           />
-        </LineChart>
+        </AreaChart>
       </ResponsiveContainer>
     </div>
   );
 };
-export default RechartsLine;
+export default RechartsArea;

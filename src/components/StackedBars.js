@@ -37,8 +37,14 @@ const StackedBars = () => {
           stroke="#333333"
         >
           <CartesianGrid stroke="#f5f5f5" horizontal="true" vertical="" />
-          <XAxis dataKey="name" fontSize={13} stroke="#836a71" />
-          <YAxis fontSize={13} stroke="#836a71" />
+          <XAxis
+            dataKey="name"
+            fontSize={13}
+            stroke="#836a71"
+            tickLine={false}
+            padding={{ left: 30 }}
+          />
+          <YAxis fontSize={13} stroke="#836a71" tickLine={false} />
           <Tooltip
             contentStyle={{
               color: "#836a71",
@@ -50,11 +56,11 @@ const StackedBars = () => {
               fontSize: 13,
               fontWeight: "lighter",
             }}
-            cursor=""
+            cursor={false}
           />
           <Legend
             verticalAlign="top"
-            height={50}
+            height={75}
             width={350}
             iconType="square"
             align="left"
