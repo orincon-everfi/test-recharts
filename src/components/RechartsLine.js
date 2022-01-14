@@ -47,7 +47,7 @@ const RechartsLine = () => {
               fontSize: 13,
               fontWeight: "lighter",
             }}
-            cursor=""
+            cursor={false}
           />
           <Legend
             verticalAlign="top"
@@ -74,6 +74,7 @@ const RechartsLine = () => {
           <Line
             type="line"
             dot=""
+            name="Home Office"
             dataKey="Home_Office"
             stroke="#ffd256"
             strokeWidth={2}

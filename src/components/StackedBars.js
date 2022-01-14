@@ -60,7 +60,7 @@ const StackedBars = () => {
           />
           <Legend
             verticalAlign="top"
-            height={75}
+            height={60}
             width={350}
             iconType="square"
             align="left"
@@ -82,7 +82,12 @@ const StackedBars = () => {
             />
             ;
           </Bar>
-          <Bar dataKey="Home_Office" stackId="a" fill="#ffd256">
+          <Bar
+            dataKey="Home_Office"
+            stackId="a"
+            fill="#ffd256"
+            name="Home Office"
+          >
             <LabelList
               valueAccessor={valueAccessor("Home_Office")}
               fontSize={11}

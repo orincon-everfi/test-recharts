@@ -26,7 +26,6 @@ const RechartsArea = () => {
             left: 20,
             bottom: 5,
           }}
-          stroke="#333333"
         >
           <CartesianGrid stroke="#f5f5f5" horizontal="true" vertical="" />
           <XAxis
@@ -50,21 +49,35 @@ const RechartsArea = () => {
             }}
             cursor={false}
           />
-          {/*  <Legend
+          <Legend
             verticalAlign="top"
             height={60}
             width={350}
             iconType="square"
             align="left"
-        /> */}
-          <Area type="linear" dataKey="Consumer" stackId="a" fill="#21c3b8" />
-
-          <Area type="linear" dataKey="Corporate" stackId="a" fill="#fb8340" />
+          />
+          <Area
+            type="linear"
+            dataKey="Consumer"
+            stackId="a"
+            stroke="#21c3b8"
+            fill="#21c3b8"
+          />
 
           <Area
             type="linear"
+            dataKey="Corporate"
+            stackId="a"
+            stroke="#fb8340"
+            fill="#fb8340"
+          />
+
+          <Area
+            type="linear"
+            name="Home Office"
             dataKey="Home_Office"
             stackId="a"
+            stroke="#ffd256"
             fill="#ffd256"
           />
         </AreaChart>
